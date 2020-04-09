@@ -15,8 +15,11 @@
  */
 package testapp1.testapp1;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,17 +29,14 @@ import org.springframework.web.bind.annotation.RestController;
 @Controller
 public class HomeController {
 
-    /*
-	@Value("${welcome}")
-    private String welcome;
+	  @GetMapping("/login")
+	  public String greetingForm(Model model) {
+	    model.addAttribute("login", new Greeting());
+	    return "login";
+	  }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String ipaddress() throws Exception {
-        return "Reply: " + welcome;
-    }
-    */
-	 @RequestMapping("/")
-	  public String index() {
-	    return "index";
-	 }
+	  @PostMapping("/login")
+	  public String greetingSubmit(@ModelAttribute Greeting greeting) {
+	    return "welcome";
+	  }
 }
