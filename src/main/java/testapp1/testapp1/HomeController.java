@@ -29,13 +29,13 @@ import org.springframework.web.bind.annotation.RestController;
 @Controller
 public class HomeController {
 
-	  @GetMapping("/login")
+	  @GetMapping("/greeting")
 	  public String greetingForm(Model model) {
-	    model.addAttribute("login", new Greeting());
-	    return "login";
+	    model.addAttribute("greeting", new Greeting());
+	    return "greeting";
 	  }
 
-	  @PostMapping("/login")
+	  @PostMapping("/greeting")
 	  public String greetingSubmit(@ModelAttribute Greeting greeting) {
 	    return "welcome";
 	  }
