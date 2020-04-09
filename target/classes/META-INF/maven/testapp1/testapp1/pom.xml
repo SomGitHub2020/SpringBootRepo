@@ -48,6 +48,13 @@
   <dependencies>
 
     <!-- spring-boot -->
+        	<!-- change start -->
+       <dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-thymeleaf</artifactId>
+	</dependency>
+    	<!-- change end -->
+    	
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
@@ -58,10 +65,7 @@
     </dependency>
 
     	<!-- change start -->
-    <dependency>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-thymeleaf</artifactId>
-	</dependency>
+ 
 	<dependency>
         <groupId>javax.xml.bind</groupId>
         <artifactId>jaxb-api</artifactId>
